@@ -41,6 +41,11 @@ team_stats <- sqldf("select t.*, ls.opponent
              from team_stats t 
              left join lou_schedule ls on t.game_id = ls.id")
 
+team_stats <- team_stats %>% 
+  mutate(TOP_seconds = as.numeric(as.POSIXct(strptime(possession_time, format = "%M:%OS"))) - 
+           as.numeric(as.POSIXct(strptime("0", format = "%S")))) %>% 
+  mutate(TOP_mins = TOP_seconds / 60)
+
 fwrite(lou_schedule, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_schedule.csv')
 fwrite(lou_stats, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_stats.csv')
 fwrite(team_stats, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_team_stats.csv')
