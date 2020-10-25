@@ -1,7 +1,6 @@
-# devtools::install_github(repo = "saiemgilani/cfbscrapR")
 library(tidyverse)
 library(data.table)
-library(cfbscrapR)
+library(cfbscrapR)  ## install with: devtools::install_github(repo = "saiemgilani/cfbscrapR")
 library(sqldf)
 
 seasons_list <- 2013:2020
@@ -37,6 +36,7 @@ for (t in teams_list){
     ## "spread" column name causes issues, "spread" is a function name
     names(tmp_lines) <- gsub(pattern = 'spread', replacement = 'gambling_line', x = names(tmp_lines))
     
+    ## re-format gambling lines 
     tmp_lines <- tmp_lines %>% 
       mutate(negative_mov = opp_score - team_score, 
              gambling_line = as.numeric(gambling_line), 
@@ -46,12 +46,12 @@ for (t in teams_list){
     ## add to betting_lines df
     betting_lines <- bind_rows(betting_lines, tmp_lines)
     
-    } ## end seasons loop
+  } ## end seasons loop
 
-  } ## end teams loop
+} ## end teams loop
 
 ## remove for space
-rm(tmp_lines, tmp_schedule, s, t, season_list, teams_list)
+rm(tmp_lines, tmp_schedule, s, t, seasons_list, teams_list)
 
 ## remove duplicates from game times 
 game_times <- schedules %>% 
@@ -62,8 +62,7 @@ betting_lines <- sqldf("select bl.*, s.start_date
       from betting_lines bl 
       join game_times s on bl.game_id = s.id") %>% 
   data.frame() %>% 
-  mutate(game_date = lubridate::ymd(str_sub(start_date, start = 1, end = 10))) %>% 
-  select(-start_date)
+  mutate(game_date = lubridate::ymd(str_sub(start_date, start = 1, end = 10)))
 
 ## filter to weeks where:
 ## 1) all 3 teams won
