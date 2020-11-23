@@ -1,0 +1,13 @@
+id,season,week,season_type,start_date,start_time_tbd,neutral_site,conference_game,attendance,venue_id,venue,home_id,home_team,home_conference,home_points,home_post_win_prob,away_id,away_team,away_conference,away_points,away_post_win_prob,excitement_index,opponent
+401234564,2020,2,regular,2020-09-13T00:00:00.000Z,FALSE,FALSE,FALSE,,3873,Papa John's Cardinal Stadium,97,Louisville,ACC,35,0.9976235561509056,98,Western Kentucky,Conference USA,21,0.0023764438490944118,2.8725439340,Western Kentucky
+401234569,2020,3,regular,2020-09-19T23:30:00.000Z,FALSE,FALSE,TRUE,,3873,Papa John's Cardinal Stadium,97,Louisville,ACC,34,0.34564541935931925,2390,Miami,ACC,47,0.6543545806406807,3.5186606945,Miami
+401234595,2020,4,regular,2020-09-26T16:00:00.000Z,FALSE,FALSE,TRUE,,3752,Heinz Field,221,Pittsburgh,ACC,23,0.7919969600629284,97,Louisville,ACC,20,0.2080030399370716,7.1413906815,Pittsburgh
+401234601,2020,6,regular,2020-10-09T23:00:00.000Z,FALSE,FALSE,TRUE,,721,Bobby Dodd Stadium at Historic Grant Field,59,Georgia Tech,ACC,46,0.9854551675432522,97,Louisville,ACC,27,0.014544832456747758,7.6275571216,Georgia Tech
+401234613,2020,7,regular,2020-10-17T18:30:00.000Z,FALSE,FALSE,TRUE,,3855,Notre Dame Stadium,87,Notre Dame,FBS Independents,12,0.8906860429536613,97,Louisville,ACC,7,0.10931395704633873,4.3503868575,Notre Dame
+401234619,2020,8,regular,2020-10-24T16:00:00.000Z,FALSE,FALSE,TRUE,,3873,Papa John's Cardinal Stadium,97,Louisville,ACC,48,0.998903465886879,52,Florida State,ACC,16,0.0010965341131210504,3.0263995297,Florida State
+401234627,2020,9,regular,2020-10-31T20:00:00.000Z,FALSE,FALSE,TRUE,,3873,Papa John's Cardinal Stadium,97,Louisville,ACC,35,0.14619914640172718,259,Virginia Tech,ACC,42,0.8538008535982728,3.3183614735,Virginia Tech
+401234635,2020,10,regular,2020-11-08T01:00:00.000Z,FALSE,FALSE,TRUE,,3923,Scott Stadium,258,Virginia,ACC,,,97,Louisville,ACC,,,,Virginia
+401257934,2020,11,regular,2020-11-14T20:30:00.000Z,FALSE,FALSE,TRUE,,3923,Scott Stadium,258,Virginia,ACC,31,0.8784945794475055,97,Louisville,ACC,17,0.12150542055249447,5.7917831960,Virginia
+401234643,2020,12,regular,2020-11-21T00:00:00.000Z,FALSE,FALSE,TRUE,,3873,Papa John's Cardinal Stadium,97,Louisville,ACC,30,0.9985800692776219,183,Syracuse,ACC,0,0.0014199307223781155,2.1735539716,Syracuse
+401234660,2020,13,regular,2020-11-28T05:00:00.000Z,TRUE,FALSE,TRUE,,3873,Papa John's Cardinal Stadium,97,Louisville,ACC,,,154,Wake Forest,ACC,,,,Wake Forest
+401234649,2020,15,regular,2020-12-12T05:00:00.000Z,TRUE,FALSE,TRUE,,3615,Alumni Stadium,103,Boston College,ACC,,,97,Louisville,ACC,,,,Boston College

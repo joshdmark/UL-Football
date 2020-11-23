@@ -1,15 +1,9 @@
-# # Then can install using the devtools package from either of the following:
 # devtools::install_github(repo = "saiemgilani/cfbscrapR")
-# # or the following (these are the exact same packages):
 # devtools::install_github(repo = "meysubb/cfbscrapR")
-
 library(tidyverse)
-library(data.table)
+library(data.table) 
 library(cfbscrapR)
 library(sqldf)
-
-
-# cfbscrapR::cfb_game_info(year = 2019, week = 1) %>% filter(home_conference == 'ACC')
 
 ## get louisville schedule
 lou_schedule <- cfbscrapR::cfb_game_info(year = 2020, team = 'Louisville') %>% 
