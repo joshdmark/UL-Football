@@ -29,17 +29,22 @@ team_stats <- team_stats %>%
   separate(third_down_eff, into = c('down3_attempts', 'down3_success'), sep = '-') %>% 
   separate(fourth_down_eff, into = c('down4_attempts', 'down4_success'), sep = '-') %>% 
   separate(total_penalties_yards, into = c('penalties', 'penalty_yardage'), sep = '-')# %>% 
-  # gather(key = 'stat', value = 'metric', -game_id, -school, -conference, -home_away)
+# gather(key = 'stat', value = 'metric', -game_id, -school, -conference, -home_away)
 ## add opponent to team_stats 
 team_stats <- sqldf("select t.*, ls.opponent
              from team_stats t 
-             left join lou_schedule ls on t.game_id = ls.id")
+             left join lou_schedule ls on t.game_id = ls.game_id")
 
 team_stats <- team_stats %>% 
   mutate(TOP_seconds = as.numeric(as.POSIXct(strptime(possession_time, format = "%M:%OS"))) - 
            as.numeric(as.POSIXct(strptime("0", format = "%S")))) %>% 
   mutate(TOP_mins = TOP_seconds / 60)
 
-fwrite(lou_schedule, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_schedule.csv')
-fwrite(lou_stats, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_stats.csv')
-fwrite(team_stats, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_team_stats.csv')
+## write output files 
+fwrite(lou_schedule, "Documents/Sports/UL Football/lou_schedule.csv")
+fwrite(lou_stats, "Documents/Sports/UL Football/lou_stats.csv")
+fwrite(team_stats, "Documents/Sports/UL Football/lou_team_stats.csv")
+
+# fwrite(lou_schedule, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_schedule.csv')
+# fwrite(lou_stats, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_stats.csv')
+# fwrite(team_stats, 'C:/Users/joshua.mark/OneDrive - Accenture/Desktop/Sports/UL Football/lou_team_stats.csv')
